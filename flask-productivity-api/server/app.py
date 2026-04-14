@@ -20,9 +20,14 @@ def create_app():
     from . import models
     from .routes.auth_routes import auth_bp
     from .routes.note_routes import note_bp
+    
+   
 
     app.register_blueprint(auth_bp, url_prefix="/auth")
     app.register_blueprint(note_bp, url_prefix="/notes")
+    
+    print("NOTE ROUTES LOADED")
+    print(app.url_map)
 
     return app
 
